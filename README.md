@@ -26,6 +26,9 @@ data/
  └── policy.pdf
 
 ## ▶️ Run Locally
+1. Clone the repo
+2. Install dependencies
+3. Run streamlit
 
 pip install -r requirements.txt  
 streamlit run src/streamlit_app.py
