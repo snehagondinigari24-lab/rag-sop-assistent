@@ -107,6 +107,10 @@ python-dotenv
 Sneha Gondinigari
 GitHub: @snehagondinigari24-lab
 
+## 🎥 Demo Video
+[▶️ Click here to watch Demo](https://github.com/snehagondinigari24-lab/rag-sop-assistent/blob/main/rag_sop_assistent.mp4)
+
+
 📄 License
 MIT License
 **To update on GitHub:**
