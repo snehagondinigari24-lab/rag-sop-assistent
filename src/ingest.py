@@ -1,23 +1,27 @@
+import sys
+import os
+sys.path.insert(0, os.path.dirname(__file__))
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
 
-# Load PDF
-loader = PyPDFLoader("data/policy.pdf")
+loader = PyPDFLoader(os.path.join(BASE_DIR, "data", "policy.pdf"))
 documents = loader.load()
 
-# Split
 text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=500,
-    chunk_overlap=100
+    chunk_size=800,
+    chunk_overlap=200,
 )
 docs = text_splitter.split_documents(documents)
 
-# Embeddings
-embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+embeddings = HuggingFaceEmbeddings(
+    model_name="sentence-transformers/all-MiniLM-L6-v2"
+)
 
-# Create DB
 db = FAISS.from_documents(docs, embeddings)
-db.save_local("vectorstore/faiss_index")
-print("FAISS index created")
+db.save_local(os.path.join(BASE_DIR, "vectorstore", "faiss_index"))
+print(f"✅ FAISS index created with {len(docs)} chunks")
