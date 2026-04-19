@@ -92,17 +92,6 @@ Answer extracted from best chunk
       ↓
 Displayed in chat UI
 
-📦 Requirements
-langchain
-langchain-community
-faiss-cpu
-sentence-transformers
-streamlit
-fastapi
-uvicorn
-pypdf
-python-dotenv
-
 👩‍💻 Author
 Sneha Gondinigari
 GitHub: @snehagondinigari24-lab
