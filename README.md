@@ -113,9 +113,3 @@ GitHub: @snehagondinigari24-lab
 
 📄 License
 MIT License
-**To update on GitHub:**
-```bash
-# In your project folder
-git add README.md
-git commit -m "Updated README with full documentation"
-git push origin main
